@@ -5,27 +5,28 @@
 #include "Spirillum.h"
 #include "Bacillus.h"
 #include "Coccus.h"
+#include <ctime>
+
 
 using namespace std;
 
 vector<vector<char>> PetriDish::createTableWithDots() {
 
 	vector<vector<char>> table;
-	for (int j = 0; j < ysize; j++) {
+	for (int j = 0; j < ysizeDish; j++) {
 		vector<char> row;
-		for (int i = 0; i < xsize; i++)
+		for (int i = 0; i < xsizeDish; i++)
 			row.push_back('.');
 		table.push_back(row);
 	}
 	return table;
 }
 
-
 vector<vector<char>> PetriDish::createTableWithBacterials()
 {
 	vector<vector<char>> table = createTableWithDots();
-	for (int i = 0; i < lifeForms.size(); i++) {
-		LifeForm object = lifeForms[i];
+	for (int i = 0; i < vectorOfBacterials.size(); i++) {
+		LifeForm object = vectorOfBacterials[i];
 		table[object.y][object.x] = object.name;
 	}
 	return table;
@@ -33,8 +34,8 @@ vector<vector<char>> PetriDish::createTableWithBacterials()
 
 void PetriDish::print() {
 	vector<vector<char>> table = createTableWithBacterials();
-	for (int y = 0; y < ysize; y++) {
-		for (int x = 0; x < xsize; x++) {
+	for (int y = 0; y < ysizeDish; y++) {
+		for (int x = 0; x < xsizeDish; x++) {
 			cout << table[y][x];
 		}
 		cout << endl;
@@ -43,35 +44,45 @@ void PetriDish::print() {
 
 void PetriDish::putRandomBacterials(int numberOfBacterials)
 {
+	for (int i = 0; i < numberOfBacterials; i++) {
+		LifeForm bacteria = createRandomBacteria();
+		vectorOfBacterials.push_back(bacteria);
+	}
 }
 
 void PetriDish::putBacterials()
 {
 	// todo genarate random
 	Spirillum s1(3, 3);
-	lifeForms.push_back(s1);
+	vectorOfBacterials.push_back(s1);
 	Spirillum s2(3, 6);
-	lifeForms.push_back(s2);
+	vectorOfBacterials.push_back(s2);
 	Spirillum s3(3, 7);
-	lifeForms.push_back(s3);
+	vectorOfBacterials.push_back(s3);
 	Spirillum s4(3, 10);
-	lifeForms.push_back(s4);
+	vectorOfBacterials.push_back(s4);
 	Spirillum s5(3, 13);
-	lifeForms.push_back(s5);
+	vectorOfBacterials.push_back(s5);
 	Spirillum s6(3, 29);
-	lifeForms.push_back(s6);
+	vectorOfBacterials.push_back(s6);
+}
+
+void PetriDish::timeLaps()
+{
+
 }
 
 LifeForm PetriDish::createRandomBacteria() {
-	int x, y, t;
-	x = rand() % xsize;
-	y = rand() % ysize;
-	t = rand() % 3;
+	int x, y, type;
+	srand((unsigned)time(0));
+	x = rand() % xsizeDish;
+	y = rand() % ysizeDish;
+	type = rand() % 3;
 
-	if (t == 0)
+	if (type == 0)
 		return 	Bacillus(x, y);
-	if (t == 1)
+	if (type == 1)
 		return 	Coccus(x, y);
-	if (t == 2)
+	if (type == 2)
 		return 	Spirillum(x, y);
 }

@@ -8,16 +8,17 @@ using namespace std;
 class PetriDish
 {
 private:
-	int xsize , ysize; //wymiary szalki
-	vector<LifeForm> lifeForms;
+	int xsizeDish , ysizeDish; 
+	vector<LifeForm> vectorOfBacterials;
 public:
 	PetriDish() {
-		xsize = 50;
-		ysize = 30;
+		xsizeDish = 50;
+		ysizeDish = 30;
 	}
 	void print();
 	void putRandomBacterials(int numberOfBacterials);
 	void putBacterials();
+	void timeLaps();
 private:
 	LifeForm createRandomBacteria();
 	vector<vector<char>> createTableWithDots();

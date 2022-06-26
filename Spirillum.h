@@ -12,5 +12,6 @@ public:
 		NEARBY = 0.2;
 		name = 'S';
 	}
+
 };
 

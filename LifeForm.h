@@ -10,7 +10,5 @@ public:
 	int x, y;
 	char name;
 	bool isNear(LifeForm);
-
+	bool isSurvivor(vector<LifeForm> vectorOfBacterials);
 };
-
-LifeForm random(int x, int y);

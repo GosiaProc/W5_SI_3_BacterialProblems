@@ -74,7 +74,7 @@ void PetriDish::timeLaps()
 
 LifeForm PetriDish::createRandomBacteria() {
 	int x, y, type;
-	srand((unsigned)time(0));
+	//srand((unsigned)time(0));
 	x = rand() % xsizeDish;
 	y = rand() % ysizeDish;
 	type = rand() % 3;
@@ -83,6 +83,6 @@ LifeForm PetriDish::createRandomBacteria() {
 		return 	Bacillus(x, y);
 	if (type == 1)
 		return 	Coccus(x, y);
-	if (type == 2)
-		return 	Spirillum(x, y);
+	else 
+		return Spirillum(x, y);
 }

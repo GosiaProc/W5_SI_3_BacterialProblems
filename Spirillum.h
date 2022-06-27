@@ -12,6 +12,8 @@ public:
 		NEARBY = 0.2;
 		name = 'S';
 	}
+		bool isSurvivor(vector<LifeForm> vectorOfBacterials);
+
 
 };
 

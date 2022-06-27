@@ -5,8 +5,6 @@
 #include "Spirillum.h"
 #include "Bacillus.h"
 #include "Coccus.h"
-#include <ctime>
-
 
 using namespace std;
 
@@ -74,7 +72,6 @@ void PetriDish::timeLaps()
 
 LifeForm PetriDish::createRandomBacteria() {
 	int x, y, type;
-	//srand((unsigned)time(0));
 	x = rand() % xsizeDish;
 	y = rand() % ysizeDish;
 	type = rand() % 3;

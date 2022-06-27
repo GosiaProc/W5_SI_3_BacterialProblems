@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include "LifeForm.h"
-
-
+#include <cstdlib>
+#include <iostream>
 using namespace std;
 
 class PetriDish
@@ -14,6 +14,7 @@ public:
 	PetriDish() {
 		xsizeDish = 50;
 		ysizeDish = 30;
+		srand(time(0));
 	}
 	void print();
 	void putRandomBacterials(int numberOfBacterials);

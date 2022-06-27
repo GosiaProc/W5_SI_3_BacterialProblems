@@ -14,7 +14,7 @@ public:
 	PetriDish() {
 		xsizeDish = 50;
 		ysizeDish = 30;
-		srand(time(0));
+		//srand(time(0));
 	}
 	void print();
 	void putRandomBacterials(int numberOfBacterials);

@@ -7,6 +7,10 @@ using namespace std;
 
 int main() {
 	PetriDish szalkapetriego;
-	szalkapetriego.putRandomBacterials(60);
+	szalkapetriego.putRandomBacterials(400);
+	while (true){
 	szalkapetriego.print();
+	szalkapetriego.timeLaps();
+	getchar();
+	}
 }

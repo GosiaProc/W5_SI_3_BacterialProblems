@@ -67,7 +67,15 @@ void PetriDish::putBacterials()
 
 void PetriDish::timeLaps()
 {
-
+	vector <LifeForm> vectorOfNewBacterials;
+	for (int i = 0; i < vectorOfBacterials.size(); i++) {
+		LifeForm bac = vectorOfBacterials[i];
+		if (bac.isSurvivor(vectorOfBacterials)) {
+			vectorOfNewBacterials.push_back(bac);
+			//vectorOfNewBacterials.push_back(createRandomBacteria()); //todo clone
+		}
+	}
+	vectorOfBacterials.swap(vectorOfNewBacterials);
 }
 
 LifeForm PetriDish::createRandomBacteria() {

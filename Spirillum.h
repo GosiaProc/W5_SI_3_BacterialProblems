@@ -5,7 +5,7 @@ class Spirillum :
 	public LifeForm
 {
 public:
-		Spirillum(int xpos, int ypos)
+		Spirillum(double xpos, double ypos)
 	{
 			x = xpos;
 			y = ypos;

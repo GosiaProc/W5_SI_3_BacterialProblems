@@ -5,7 +5,7 @@ class Coccus :
     public LifeForm
 {
 public:
-	Coccus(int xpos,int ypos) {
+	Coccus(double xpos, double ypos) {
 		x = xpos;
 		y = ypos;
 

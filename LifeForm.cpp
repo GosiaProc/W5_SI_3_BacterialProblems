@@ -23,3 +23,9 @@ bool LifeForm::isSurvivor(vector<LifeForm> vectorOfBacterials)
     return false;
 }
 
+double LifeForm::getNearby()
+{
+    return NEARBY;
+}
+
+

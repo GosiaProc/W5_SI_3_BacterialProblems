@@ -8,8 +8,11 @@ class LifeForm
 protected:
 	double NEARBY;
 public:
-	int x, y;
+	double x, y;
 	char name;
+	bool isAlive;
 	bool isNear(LifeForm);
 	bool isSurvivor(vector<LifeForm> vectorOfBacterials);
+	double getNearby();
+	
 };

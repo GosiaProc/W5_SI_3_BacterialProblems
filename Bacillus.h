@@ -5,7 +5,7 @@ class Bacillus :
 	public LifeForm
 {
 public:
-	Bacillus(int xpos, int ypos) {
+	Bacillus(double xpos, double ypos) {
 		x = xpos;
 		y = ypos;
 		NEARBY = 0.3;
